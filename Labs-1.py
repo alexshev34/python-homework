@@ -53,10 +53,33 @@ print(j)
 # #Задача 7
 
 def password(data: str) -> bool:
-        return len(data) > 16 and all(re.search(p, data) for p in ('[AZ]', '\d', '[az]'))
+    return len(data) > 16 and all(re.search(p, data) for p in ('[AZ]', '\d', '[az]'))
 
-#Задача 8, #Задача 9, #Задача 10 (пока что разбираюсь)
+#Задача 8
 
+array=[[[555]], [9, [5, 2, [8], 8, 8, 4], 3]]
+def flat_list(array, new_list=[]):
+    for i in array:
+        if type(i) == int:
+            new_list.append(i)
+        else:            
+            flat_list(i)
+    return new_list
+print(flat_list(array))
 
+#Задача 9
+
+stats = {'a':5.1, 'b':2.2, 'c': 3.7}
+inverse = [(value, key) for key, value in stats.items()]
+print(max(inverse)[1])
+
+# #Задача 10
+
+data= [2,4,5,7,1,1,2]
+result = []
+for i in data:
+    if data.count(i) > 1:
+        result.append(i)
+print(result)
 
 
